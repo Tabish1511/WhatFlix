@@ -6,13 +6,31 @@ import { InputBox } from "./InputBox";
 import SubHeadingComponent from "./SubHeadingComponent";
 import { Button } from "./Button";
 import Movie from "./Movie";
+import Movies from "./Movies";
+
+interface MovieInterface {
+    adult: boolean;
+    backdrop_path: string;
+    genre_ids: number[];
+    id: number;
+    original_language: string;
+    original_title: string;
+    overview: string;
+    popularity: number;
+    poster_path: string;
+    release_date: string;
+    title: string;
+    video: boolean;
+    vote_average: number;
+    vote_count: number;
+}
 
 export default function SearchComponent() {
     const [keywords, setKeywords] = useState<string>('');
-    const [movies, setMovies] = useState<any[]>([]);
+    const [movies, setMovies] = useState<MovieInterface[]>([]);
     const [hasSearched, setHasSearched] = useState<boolean>(false);
 
-    const getRandomMovies = (results: any, count: number) => {
+    const getRandomMovies = (results: MovieInterface[], count: number) => {
         const shuffled = results.sort(() => 0.5 - Math.random());
         return shuffled.slice(0, count);
     };
@@ -34,27 +52,23 @@ export default function SearchComponent() {
     };
 
     return (
-        <div className="border-solid border-2 border-white">
-            <SubHeadingComponent />
-            <InputBox
-                name="Keywords"
-                placeholder="Keywords search..."
-                onChange={e => setKeywords(e.target.value)}
-            />
-            <Button onClick={handleSearch} label="Search" />
-
-
-
-            {hasSearched &&
-            <div>
-                {movies.length > 0 ? ( 
-                <div>
-                    {movies.map((movie, index) => (
-                        <Movie key={index} poster={movie.poster_path} />
-                    ))}
+        <div className="border-solid border-4 border-green-500 flex flex-col justify-center">
+            <div id="SearchComponent" className="border-solid border-4 border-red-500 flex flex-col justify-center h-svh">
+                <div className="border-solid border-4 border-white flex justify-center">
+                    <SubHeadingComponent />
                 </div>
-                ) : ( <div>No movies found</div> )}
-            </div>}
+                <div className="border-solid border-4 border-white flex justify-center m-4 ">
+                    <InputBox
+                        name="Keywords"
+                        placeholder="Keywords search..."
+                        onChange={e => setKeywords(e.target.value)}
+                    />
+                    <Button onClick={handleSearch} label="Search" />
+                </div>
+            </div>
+            <div id="MovieComponent" className="">
+                <Movies hasSearched={hasSearched} movies={movies}/>
+            </div>
         </div>
     );
 }
