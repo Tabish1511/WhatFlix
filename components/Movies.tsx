@@ -9,7 +9,7 @@ export default function Movies(props: MoviesProps) {
     return (
         <div>
             {props.hasSearched &&
-                <div className="flex justify-center">
+                <div className="flex justify-center items-center h-svh">
                     {props.movies.length > 0 ? ( 
                     <div className="w-1/2">
                         {props.movies.map((movie:any, index:number) => (

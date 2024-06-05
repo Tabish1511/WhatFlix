@@ -52,8 +52,8 @@ export default function SearchComponent() {
     };
 
     return (
-        <div className="border-solid border-4 border-green-500 flex flex-col justify-center">
-            <div id="SearchComponent" className="border-solid border-4 border-red-500 flex flex-col justify-center h-svh">
+        <div className="flex flex-col justify-center">
+            <div id="SearchComponent" className="flex flex-col justify-center h-svh">
                 <div className="flex justify-center m-4">
                     <SubHeadingComponent />
                 </div>
@@ -66,7 +66,7 @@ export default function SearchComponent() {
                     <Button onClick={handleSearch} label="Search" />
                 </div>
             </div>
-            <div id="MovieComponent" className="h-svh">
+            <div id="MovieComponent" className="">
                 <Movies hasSearched={hasSearched} movies={movies}/>
             </div>
         </div>
