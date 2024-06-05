@@ -54,10 +54,10 @@ export default function SearchComponent() {
     return (
         <div className="border-solid border-4 border-green-500 flex flex-col justify-center">
             <div id="SearchComponent" className="border-solid border-4 border-red-500 flex flex-col justify-center h-svh">
-                <div className="border-solid border-4 border-white flex justify-center">
+                <div className="flex justify-center m-4">
                     <SubHeadingComponent />
                 </div>
-                <div className="border-solid border-4 border-white flex justify-center m-4 ">
+                <div className="flex justify-center m-4">
                     <InputBox
                         name="Keywords"
                         placeholder="Keywords search..."
@@ -66,7 +66,7 @@ export default function SearchComponent() {
                     <Button onClick={handleSearch} label="Search" />
                 </div>
             </div>
-            <div id="MovieComponent" className="">
+            <div id="MovieComponent" className="h-svh">
                 <Movies hasSearched={hasSearched} movies={movies}/>
             </div>
         </div>
