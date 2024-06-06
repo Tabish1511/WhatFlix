@@ -84,10 +84,6 @@ export default function SearchComponent() {
     );
 }
 
-
-
-
-
 // Usage example
 const genres = [
     { id: 28, name: 'Action' },
@@ -110,7 +106,48 @@ const genres = [
     { id: 10752, name: 'War' },
     { id: 37, name: 'Western' }
   ];
-// const genres = [
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  // const genres = [
 //     'Action', 'Adventure', 'Animation', 'Comedy', 'Crime', 'Documentary',
 //     'Drama', 'Family', 'Fantasy', 'History', 'Horror', 'Music', 'Mystery',
 //     'Romance', 'Science Fiction', 'TV Movie', 'Thriller', 'War', 'Western', 'Biography'
