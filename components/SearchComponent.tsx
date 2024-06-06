@@ -46,6 +46,15 @@ export default function SearchComponent() {
             const randomMovies = getRandomMovies(movieResponse, 3);
 
             setMovies(randomMovies);
+
+            if(randomMovies.length > 0){
+                const target = document.getElementById('MovieComponent');
+                if (target) {
+                target.scrollIntoView({ behavior: 'smooth' });
+                }
+            }
+
+
         } catch (error) {
             console.error('Error fetching movies:', error);
         }
