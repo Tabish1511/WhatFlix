@@ -6,7 +6,7 @@ interface ButtonProps{
 
 export function Button(props: ButtonProps){
     return (
-        <div className={`mx-6 mt-2 ${props.className}`}>
+        <div className={`w-52 mx-6 mt-2 ${props.className}`}>
             <button 
             onClick={props.onClick} 
             type="button"
